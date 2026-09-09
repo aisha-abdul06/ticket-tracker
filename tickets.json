@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Unable to receive emails",
+    "reporter": "Khadija",
+    "priority": "medium",
+    "status": "open"
+  },
+  {
+    "title": "Lost all files",
+    "reporter": "Kevin",
+    "priority": "high",
+    "status": "open"
+  },
+  {
+    "title": "Virus attack",
+    "reporter": "Halima",
+    "priority": "high",
+    "status": "open"
+  },
+  {
+    "title": "Slow booting process",
+    "reporter": "Amina",
+    "priority": "Medium",
+    "status": "open"
+  }
+]
