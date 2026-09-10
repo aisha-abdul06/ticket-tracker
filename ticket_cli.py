@@ -18,7 +18,14 @@ def save_tickets(tickets):
 
 
 def create_ticket():
-    title = input("Ticket title: ")
+    while True:
+        title = input("Ticket title: ").strip()
+
+        if title:
+            break
+
+        print("Ticket title cannot be empty. Please try again.")
+
     reporter = input("Reported by: ")
     priority = input("Priority (low/medium/high): ")
 
@@ -35,15 +42,33 @@ def list_tickets(tickets):
         print("No tickets yet.")
         return
 
-    for index, ticket in enumerate(tickets, start=1):
-        print(f"{index}. [{ticket['priority']}] {ticket['title']} — {ticket['status']}")
+    print("\nOPEN TICKETS")
+    found_open = False
 
+    for index, ticket in enumerate(tickets, start=1):
+        if ticket["status"] == "open":
+            print(f"{index}. [{ticket['priority']}] {ticket['title']} — {ticket['status']}")
+            found_open = True
+
+    if not found_open:
+        print("No open tickets.")
+
+    print("\nCLOSED TICKETS")
+    found_closed = False
+
+    for index, ticket in enumerate(tickets, start=1):
+        if ticket["status"] == "closed":
+            print(f"{index}. [{ticket['priority']}] {ticket['title']} — {ticket['status']}")
+            found_closed = True
+
+    if not found_closed:
+        print("No closed tickets.")
 
 def main():
     tickets = load_tickets()
 
     while True:
-        print("\n1. New ticket 2. List tickets 3. Quit")
+        print("\n1. New ticket 2. List tickets 3. Quit 4. close ticket")
         choice = input("Choose: ")
 
         if choice == "1":
@@ -57,6 +82,17 @@ def main():
         elif choice == "3":
             print("Goodbye.")
             break
+
+        elif choice == "4":
+            list_tickets(tickets)
+            ticket_number = int(input("Which ticket number do you want to close? "))
+            ticket_index = ticket_number - 1
+            if 0 <= ticket_index < len(tickets):
+                tickets[ticket_index]["status"] = "closed"
+                save_tickets(tickets)
+                print("Ticket closed.")
+            else:
+                print("Invalid ticket number.")
 
         else:
             print("Invalid choice, try again.")
