@@ -3,7 +3,7 @@
     "title": "Unable to receive emails",
     "reporter": "Khadija",
     "priority": "medium",
-    "status": "open"
+    "status": "closed"
   },
   {
     "title": "Lost all files",
@@ -21,6 +21,12 @@
     "title": "Slow booting process",
     "reporter": "Amina",
     "priority": "Medium",
+    "status": "open"
+  },
+  {
+    "title": "Mouse not working",
+    "reporter": "Elizabeth",
+    "priority": "High",
     "status": "open"
   }
 ]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>All Tickets</title>
+    </head>
+    <body>
+        <h1>All Support Tickets</h1>
+        {% if tickets %}
+        <ul>
+            {% for ticket in tickets %}
+            <li>
+                <strong>{{ ticket.title }}</strong> - {{ ticket.status }}
+                - {{ ticket.priority }} priority - {{ ticket.status }}
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No tickets have been logged yet.</p>
+        {% endif %}
+    </body>
+</html>
