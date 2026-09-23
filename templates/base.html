@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>{% block title %}Ticket Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    </nav>
+          <a href="{{ url_for('home') }}">Home</a>
+          <a href="{{ url_for('tickets') }}">Tickets</a>
+          <a href="{{ url_for('about') }}">About</a>
+          <a href="{{ url_for('stats') }}">Stats</a>
+          <a href="{{ url_for('open_tickets') }}">Open Tickets</a>
+          <a href="{{ url_for('closed_tickets') }}">Closed Tickets</a>
+</nav>
+{% block content %}
+{% endblock %}
+</footer>
+<p>IT Support Ticket Tracker</p>
+</footer>

@@ -28,5 +28,11 @@
     "reporter": "Elizabeth",
     "priority": "High",
     "status": "open"
+  },
+  {
+    "title": "Keyboard not working",
+    "reporter": "Arinze",
+    "priority": "High",
+    "status": "open"
   }
 ]

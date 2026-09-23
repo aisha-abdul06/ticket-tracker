@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Open Tickets{% endblock %}
+
+{% block content %}
+
+<h1>Open Tickets</h1>
+
+{% if tickets %}
+
+<ul>
+    {% for ticket in tickets %}
+    <li>
+        <strong>{{ ticket.title }}</strong>
+        - {{ ticket.priority }} priority
+        - {{ ticket.status }}
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<p>There are no open tickets.</p>
+
+{% endif %}
+
+{% endblock %}

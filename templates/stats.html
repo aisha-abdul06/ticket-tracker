@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Ticket Statistics{% endblock %}
+
+{% block content %}
+
+<h1>Ticket Statistics</h1>
+
+<p>Total tickets: {{ total }}</p>
+
+<h2>Status</h2>
+
+<ul>
+    <li>Open tickets: {{ open_tickets }}</li>
+    <li>Closed tickets: {{ closed_tickets }}</li>
+</ul>
+
+<h2>Priority</h2>
+
+<ul>
+    <li>Low priority: {{ low }}</li>
+    <li>Medium priority: {{ medium }}</li>
+    <li>High priority: {{ high }}</li>
+</ul>
+
+{% endblock %}  
