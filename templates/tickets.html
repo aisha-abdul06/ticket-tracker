@@ -8,6 +8,13 @@
 
 <p>Total tickets: {{ count }}</p>
 
+<p>
+    <a href="{{ url_for('tickets') }}">All</a>
+    <a href="{{ url_for('tickets', status='open') }}">Open</a>
+    <a href="{{ url_for('tickets', status='closed') }}">Closed</a>
+</p>
+
+
 {% if tickets %}
 
 <ul>
@@ -16,13 +23,19 @@
 
     <li>
         <strong>
-            <a href="{{ url_for('ticket_detail', ticket_id=loop.index) }}">
+            <a href="{{ url_for('ticket_detail', ticket_id=ticket.id) }}">
                 {{ ticket.title }}
             </a>
         </strong>
 
         - {{ ticket.status }}
         - {{ ticket.priority }} priority
+        {% if ticket.category_name %}
+    <em>{{ ticket.category_name }}</em>
+{% else %}
+    <em>Uncategorised</em>
+{% endif %}  
+
     </li>
 
     {% endfor %}

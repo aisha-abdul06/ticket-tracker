@@ -1,8 +1,17 @@
 CREATE TABLE IF NOT EXISTS tickets (
+
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT NOT NULL,
   reporter TEXT NOT NULL,
-  priority TEXT NOT NULL DEFAULT 'medium',
+  priority TEXT NOT NULL DEFAULT 'medium'
+     CHECK (priority IN ('low', 'medium', 'high')), 
   status TEXT NOT NULL DEFAULT 'open',
   created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP 
 );
+
+CREATE TABLE IF NOT EXISTS categories (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL UNIQUE
+);
+
+-- ALTER TABLE tickets ADD COLUMN category_id INTEGER REFERENCES categories(id);

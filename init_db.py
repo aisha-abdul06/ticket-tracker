@@ -8,3 +8,4 @@ with open("schema.sql") as f:
     connection.close()
 
     print("Database ready: tickets.db")
+
